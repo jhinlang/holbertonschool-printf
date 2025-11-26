@@ -1,0 +1,102 @@
+.TH _PRINTF 3 "November 2025" "Custom C Library" "Library Functions Manual"
+.SH NAME
+_printf \- produce output according to a format
+.SH SYNOPSIS
+.nf
+#include "main.h"
+
+int_printf(const char *format, ...);
+.fi
+
+.SH DESCRIPTION
+The
+.B _printf()
+function produces output according to a format similar to the C standard
+.BR printf (3)
+function.
+
+The
+.I format
+string is composed of zero or more characters and conversion specifications.
+Ordinary characters (not preceded by a '%') are written directly to the standard output using
+.BR write (2).
+
+A conversion specification begins with the '%' character and ends with a conversion specifier which determines how the corresponding argument is converted for output.
+
+This implementation supports the following conversion specifiers:
+
+.TP 5
+.B %c
+Prints a single character.
+The corresponding argument is read as an
+.B int
+but is output as a
+.B char
+value.
+
+.TP 5
+.B %s
+Prints a null-terminated string.
+The corresponding argument is of type
+.BR "char *"
+If the pointer is
+.BR NULL ,
+the string
+.B "(null)"
+is printed instead.
+
+.TP 5
+.B %%
+Prints a literal '%' character.
+No argument is consumed.
+
+.TP 5
+.B %d %i
+Print a signed decimal integer.
+The coreesponding argument is read as an
+.B int
+and converted to a sequence of decimal digits.
+If the value is negative, a leading minus sign is printed.
+
+Any other character following a '%' that is not one of the supported conversion specifiers causes the '%' and that character to be printed literally.
+
+.SH RETURN VALUE
+On success,
+.B _printf()
+returns the total number of characters written to the standard output, excluding the terminating null byte used to end C strings.
+
+If
+.I format
+is
+.B NULL
+or a '%' character appears at the end of the string with no following specifier,
+.B _printf()
+returns
+.BR -1 .
+
+.SH ERRORS
+.TP 5
+The
+.I format
+string is
+.B NULL
+or contain an incomplete conversion specifier at the end (a lone '%').
+
+.SH NOTES
+This implementation of
+.B _printf()
+does not support flag chracters, field width, precision, length modifiers, or any conversion specifiers other than
+.BR %c ,
+.BR %s ,
+.BR %% ,
+.BR %d ,
+.BR %i .
+
+Output is not buffered internally; characters are written directly to the standard output using
+.BR write (2)
+Through a helper function
+.BR _putchar() .
+
+.SH AUTHORS
+
+Written by Julien HINLANG & Kedia IHOGOZA
