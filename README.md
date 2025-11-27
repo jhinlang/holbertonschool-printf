@@ -59,9 +59,9 @@ command (on ubuntu): man ./man_3_printf.3
 ## Authors
 --- 
 Kedia Ihogoza
-- Github:
+- Github: https://github.com/Kedia12
 
 Julien Hinlang
-- Github: 
+- Github: https://github.com/jhinlang
 
 
