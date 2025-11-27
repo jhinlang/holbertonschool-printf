@@ -16,6 +16,9 @@ The goal of this project is to learn:
 The project is by group of 2, i'm with Kedia Ihogoza.
 
 This is our **flowchart** to show us the solution we will do.
+## Flowchart
+---
+![Flowchart_printf](images/flowchart _printf holberton.svg)
 
 # Requirements
 ---
@@ -35,12 +38,19 @@ This is our **flowchart** to show us the solution we will do.
 ---
 - **C language**
 
+## Man page
+---
+command (on ubuntu): man ./man_3_printf.3
+
 ## File Description
 --- 
 |File|Description|
 |----|-----------|
 |main.h|Is the header contains prototypes and library|
 |README.md|The README file you are currently reading|
+|_printf.c|Is the file of main function _printf|
+|_putchar.c| Is the file of the function _putchar necessary for _printf|
+|man_3_printf.3| Is the man page of _printf|
 
 ## Thanks
 --- 
