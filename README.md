@@ -18,7 +18,7 @@ The project is by group of 2, i'm with Kedia Ihogoza.
 This is our **flowchart** to show us the solution we will do.
 ## Flowchart
 ---
-![Flowchart_printf](images/flowchart _printf holberton.svg)
+![Flowchart_printf](./images/flowchart%20_printf%20holberton.svg)
 
 # Requirements
 ---
